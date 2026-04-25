@@ -1,2 +1,0 @@
-;; Generated package description from fj.el  -*- mode: lisp-data; no-byte-compile: t; lexical-binding:t -*-
-(define-package "fj" "0.34" "Client for Forgejo instances" '((emacs "29.1") (fedi "0.2") (tp "0.8") (transient "0.10.0") (magit "4.3.8")) :commit "3697ac2847180bd307e70ff0fb9ef086f59dec24" :authors '(("Marty Hiatt" . "mousebot@disroot.org")) :maintainer '("Marty Hiatt" . "mousebot@disroot.org") :keywords '("git" "convenience") :url "https://codeberg.org/martianh/fj.el")

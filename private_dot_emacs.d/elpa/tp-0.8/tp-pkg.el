@@ -1,2 +1,0 @@
-;; Generated package description from tp.el  -*- mode: lisp-data; no-byte-compile: t; lexical-binding:t -*-
-(define-package "tp" "0.8" "Utilities for transient menus that POST to an API" '((emacs "28.1") (transient "0.5.0")) :commit "cef3fc2daefbbfc29ad02b7e1f39542b57c72fe8" :authors '(("Marty Hiatt" . "mousebot@disroot.org")) :maintainer '("Marty Hiatt" . "mousebot@disroot.org") :keywords '("convenience" "api" "requests") :url "https://codeberg.org/martianh/tp.el")
