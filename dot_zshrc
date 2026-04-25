@@ -1,3 +1,4 @@
+#DOCUMENTATION - nil
 # ── Guix profile ────────────────────────────────────────────
 export GUIX_PROFILE="$HOME/.config/guix/current"
 if [ -f "$GUIX_PROFILE/etc/profile" ]; then
