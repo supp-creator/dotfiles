@@ -1,0 +1,141 @@
+@define-color base   #1e1e2e;
+@define-color mantle #181825;
+@define-color crust  #11111b;
+
+@define-color text     #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color subtext1 #bac2de;
+
+
+@define-color surfaceBlack #000000;
+@define-color surfaceWhite #111111;
+@define-color overlay0 #000000;
+@define-color surface1 #45475a;
+@define-color surface2 #585b70;
+
+@define-color overlay1 #6c7086;
+@define-color overlay2  #7f849c;
+@define-color surface0 #000000;
+
+@define-color blue      #89b4fa;
+@define-color lavender  #ffc7d6;
+@define-color sapphire  #74c7ec;
+@define-color sky       #74c7ec;
+@define-color teal      #00ffbc;
+@define-color green     #a6e3a1;
+@define-color yellow    #fffba8;
+@define-color peach     #ffc47a;
+@define-color maroon    #f52789;
+@define-color red       #f52789;
+@define-color mauve     #7150e0;
+@define-color pink      #f5c2e7;
+@define-color flamingo  #f2cdcd;
+@define-color rosewater #f5e0dc;
+
+@define-color background #1A1A24;
+
+
+
+* {
+  font-family: JetBrains Mono Nerd Font;
+  font-size: 16px;
+}
+
+#waybar {
+  background: @surface0;
+  color: #000000;
+  margin: 8px 4px 4px 8px;
+  opacity: 1.0;
+  border-radius: 12px;
+}
+
+#workspaces {
+  border-radius: 8px;
+  margin: 5px;
+  background-color: @surface0;/*#1E0A18*/
+  /* margin-right: 5px; */
+}
+
+#workspaces button {
+  color: #FF4FA3;
+  border-radius: 8px;
+  padding: 4px 0px;
+  min-width: 0;
+}
+
+#workspaces button.active {
+  color: #FFB7D5;
+  border-radius: 8px;
+  background-color: #FF4FA3;
+  padding: 4px 0px;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+  border-radius: 8px;
+}
+
+#backlight,
+#clock,
+#network,
+#cpu,
+#memory,
+#battery,
+#pulseaudio,
+#temperature,
+#custom-lock,
+#custom-music,
+#custom-power {
+  background-color: @surface0;
+  padding: 8px 6px;
+  margin: 4px 0px;
+  border-radius: 8px;
+}
+
+#clock {
+  color: #7DF9FF;
+  /* margin-right: 1rem; */
+  margin-bottom: 8px;
+}
+
+#battery {
+  color: #AAFF00;
+  background-color: @surface0;
+}
+
+#network {
+    color: #00FFB2;
+    background-color: @surface0;
+}
+
+
+#cpu {
+  color: #FF6B35;
+  background-color: @surface0;
+}
+
+#temperature {
+    color: #A8D8EA;
+    background-color: @surface0;
+}
+#memory {
+    color: #BD00FF;
+    background-color: @surface0;
+}
+
+#pulseaudio {
+  color: #FF6EC7;
+  /* margin-left: 1rem; */
+  background-color: @surface0;
+}
+
+#custom-music {
+  color: #7DF9FF;
+  background-color: #0A0520;
+  
+}
+
+#tray {
+  /* margin-right: 1rem; */
+  /* border-radius: 1rem; */
+}

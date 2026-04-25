@@ -1,0 +1,109 @@
+{
+    "layer": "bottom",
+    "position": "left",
+    "width": 50, 
+    "height": "fit",
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["custom/music"],
+    "modules-right": ["pulseaudio", "cpu", "temperature", "network", "battery", "clock"],
+    "hyprland/workspaces": {
+         "on-click": "activate",
+         "active-only": false,
+         "all-outputs": true,
+         "format": " {icon} ",
+         "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+             "default": "",
+         },
+         "persistent-workspaces": {
+             "*": 5
+         }
+     },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "custom/music": {
+        "format": "P\nL\nA\nY\nI\nN\nG",//" "
+        "format-alt":"P\nA\nU\nS\nE\nD",
+        "escape": true,
+        "interval": 1,
+        "tooltip": true,
+        "exec": "playerctl metadata --format='{{ title }}'",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-double-click": "playerctl previous",
+        "tooltip-format": "{}",
+    },
+    "clock": {
+        "format-alt": "{:%b\n%d}", /*  */ 
+        "format": "{:%H\n%M}", /*  */
+        "timezone": "Asia/Manila",
+        "tooltip": true,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode":"month",
+                    "on-scroll": 1,
+                    "mode-mon-col": 3,
+                    "format":{
+                            "months": "<span color='#ffead3'><b>{}</b></span>",
+                            "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                            "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                            "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                            "today": "<span color='#99ffdd'><b><u>{}</u></b></span>"
+                            }
+                    },
+        "actions": {
+                "on-click-right": "mode",
+                "on-click-forward": "tz_up",
+                "on-click-backward": "tz_down",
+                "on-scroll-up": "shift_up",
+                "on-scroll-down": "shift_down"
+            }
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "{usage}%",
+        "on-click-right": "ghostty -e htop"
+           },
+    "memory": {
+        "interval": 30,
+        "format": "RAM"//{percentage}%
+    },
+    "temperature":{
+        "format": "{temperatureC}°C" 
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "{signalStrength}%",//" "
+        "format-disconnected": "disc.",
+        "tooltip-format": " {ifname} via {gwaddri}",
+        "tooltip-format-wifi": "   {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "on-click": "nm-connection-editor",
+        "on-click-right": "ghostty -e nmtui"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        // "format": " {capacity}%"
+        "format": "{capacity}%",
+        "format-plugged": " {capacity}% (AC) "
+    },
+    "pulseaudio": {
+        "scroll-step": 1, // %, can be a float
+        "format": "{volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": [" ", " ", "  "]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "blueman-manager"
+    },
+}

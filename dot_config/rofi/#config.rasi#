@@ -1,0 +1,159 @@
+
+configuration {
+        show-icons:   true;
+        sidebar-mode: true;
+        font: "JetBrainsMono Nerd Font 12";
+        modi: "drun,run,filebrowser";
+        window-format: "{w} · {c} · {t}";
+}
+
+* {
+        background-color:           #f4dbd6;
+        text-color:                 #181926;
+
+        accent-color:               #ee99a0; 
+        accent2-color:              #ff5252;
+        hover-color:                #ffffff;
+        urgent-color:               #ff5252;
+        window-color:               #f3e4f5;
+
+        selected-normal-foreground: @window-color;
+        normal-foreground:          @text-color;
+        selected-normal-background: @hover-color;
+        normal-background:          @background-color;
+
+        selected-urgent-foreground: @background-color;
+        urgent-foreground:          @text-color;
+        selected-urgent-background: @urgent-color;
+        urgent-background:          @background-color;
+
+        selected-active-foreground: @window-color;
+        active-foreground:          @text-color;
+        selected-active-background: @hover-color;
+        active-background:          @accent-color;
+}
+
+#window {
+        anchor:   south;
+        location: west;
+        width:    400px;
+        height:   90%;
+        border:   1;
+        transparency: "real";
+}
+
+#mainbox {
+        enabled: true;
+        children: [ entry, listview, mode-switcher];
+}
+
+listview {
+    fixed-height: 0;
+    border: 4px 0px 0px;
+    border-color: @window-color;
+    spacing: 2px;
+    scrollbar: false;
+    padding: 2px 0px 0px;
+}
+
+inputbar {
+    enabled: true;
+    spacing: 10px;
+    margin: 0px;
+    padding: 10px;
+    border: 0px 0px 1px 0px;
+    border-radius: 0px;
+    border-color: @background-color;
+    children: [ "prompt", "entry"];
+}
+
+prompt {
+    enabled: true;
+    background-color: inherit;
+    text-color: inherit;
+}
+textbox-prompt-colon {
+    enabled: true;
+    expand: false;
+    str: "::";
+}
+
+entry {
+        expand: false;
+        margin: 8px;
+        cursor: text;
+        placeholder: "Search...";
+        placeholder-color: #999;
+}
+
+element {
+        padding: 8px;
+}
+
+element normal.normal {
+        background-color: @background-color;
+        text-color:       @text-color;
+}
+
+element normal.urgent {
+        background-color: @urgent-background;
+        text-color:       @urgent-foreground;
+}
+
+element normal.active {
+        background-color: @active-background;
+        text-color:       @active-foreground;
+}
+
+element selected.normal {
+        background-color: @selected-normal-background;
+        text-color:       @accent2-color;
+        border:           0 4px solid 0 0;
+        border-color:     @accent2-color;
+}
+
+element selected.urgent {
+        background-color: @selected-urgent-background;
+        text-color:       @selected-urgent-foreground;
+}
+
+element selected.active {
+        background-color: @selected-active-background;
+        text-color:       @selected-active-foreground;
+}
+
+element alternate.normal {
+        background-color: @normal-background;
+        text-color:       @normal-foreground;
+}
+
+element alternate.urgent {
+        background-color: @urgent-background;
+        text-color:       @urgent-foreground;
+}
+
+element alternate.active {
+        background-color: @active-background;
+        text-color:       @active-foreground;
+}
+
+button {
+        padding: 8px;
+}
+
+button selected {
+        background-color: @active-background;
+        text-color:       @background-color;
+}
+
+sidebar {
+    border: 0px;
+    border-color: #cad;
+    border-radius: 0px;
+}
+
+scrollbar {
+    width: 0px;
+    border: 0px;
+    padding: 0px;
+}

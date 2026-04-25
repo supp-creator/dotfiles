@@ -1,0 +1,2 @@
+;; Generated package description from fedi.el  -*- mode: lisp-data; no-byte-compile: t; lexical-binding:t -*-
+(define-package "fedi" "0.3" "Helper functions for fediverse clients" '((emacs "28.1") (markdown-mode "2.5")) :commit "74fab520f1d008f5a389a673616a617c03c74600" :authors '(("Marty Hiatt" . "mousebot@disroot.org")) :maintainer '("Marty Hiatt" . "mousebot@disroot.org") :url "https://codeberg.org/martianh/fedi.el")
