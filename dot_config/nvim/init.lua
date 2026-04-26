@@ -78,6 +78,9 @@ require("lazy").setup({
         }
     },
     {
+        "mrcjkb/rustaceanvim"
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         lazy = fasle,
         build = ':TSUpdate'

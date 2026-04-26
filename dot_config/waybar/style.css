@@ -46,7 +46,7 @@
   color: #000000;
   margin: 8px 4px 4px 8px;
   opacity: 1.0;
-  border-radius: 12px;
+  /* border-radius: 12px; */
 }
 
 #workspaces {
