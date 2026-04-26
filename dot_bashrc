@@ -1,0 +1,50 @@
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# ── retro bash config ──────────────────────────────────────
+# paste into ~/.bashrc then run: source ~/.bashrc
+
+# colors
+export TERM="xterm-256color"
+export CLICOLOR=1
+export LSCOLORS="GxFxCxDxBxegedabagaced"
+
+# prompt — green phosphor style: [HH:MM:SS] user@host:dir$
+_cmd_start() { _t=$EPOCHREALTIME; }
+_cmd_end() {
+    local diff=$(echo "$EPOCHREALTIME - $_t" | bc)
+    printf -v _elapsed "%.2fs" "$diff"
+}
+
+PS1='\[\e[0;32m\]\u \[\e[0;37m\]\W \[\e[0;90m\]${_elapsed}s\[\e[0m\] '
+
+# useful aliases
+alias ls='ls --color=auto'
+alias ll='ls -la'
+alias grep='grep --color=auto'
+alias cls='clear'
+
+alias pipes="~/.config/pipes.sh/pipes.sh"
+alias rss="newsboat"
+alias wallpaper="~/.config/hypr/scripts/reload-wallpaper.sh"
+
+# history settings
+HISTSIZE=10000
+HISTFILESIZE=20000
+HISTCONTROL=ignoredups:erasedups
+shopt -s histappend
+
+# startup banner (requires: sudo apt install figlet lolcat)
+# swap lolcat for: | cat  (no color) or | ccze (amber/green)
+if command -v figlet &>/dev/null; then
+  figlet -f slant "TERMINAL" | lolcat 2>/dev/null || figlet -f slant "TERMINAL"
+fi
+
+# system info on startup (requires: sudo apt install neofetch)
+if command -v neofetch &>/dev/null; then
+  neofetch
+fi
+
+# ── end retro config ────────────────────────────────────────
+
+
