@@ -28,7 +28,7 @@ alias cls='clear'
 
 alias pipes="~/.config/pipes.sh/pipes.sh"
 alias rss="newsboat"
-alias wallpaper="~/.config/hypr/scripts/reload-wallpaper.sh"
+alias wallpaper="~/.scripts/reload-wallpaper.sh"
 
 # history settings
 HISTSIZE=10000
