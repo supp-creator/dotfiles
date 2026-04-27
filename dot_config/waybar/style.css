@@ -84,7 +84,7 @@
 #pulseaudio,
 #temperature,
 #custom-lock,
-#custom-music,
+#mpris,
 #custom-power {
   background-color: @surface0;
   padding: 8px 6px;
@@ -129,7 +129,7 @@
   background-color: @surface0;
 }
 
-#custom-music {
+#mpris {
   color: #7DF9FF;
   background-color: #0A0520;
   

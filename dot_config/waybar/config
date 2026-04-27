@@ -5,7 +5,7 @@
     "height": "fit",
 
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["custom/music"],
+    "modules-center": ["mpris"],
     "modules-right": ["pulseaudio", "cpu", "temperature", "network", "battery", "clock"],
     "hyprland/workspaces": {
          "on-click": "activate",
@@ -28,9 +28,9 @@
         "icon-size": 21,
         "spacing": 10
     },
-    "custom/music": {
+    "mpris": {
         "format": "P\nL\nA\nY\nI\nN\nG",//" "
-        "format-alt":"P\nA\nU\nS\nE\nD",
+        "format-paused":"P\nA\nU\nS\nE\nD",
         "escape": true,
         "interval": 1,
         "tooltip": true,
@@ -38,7 +38,7 @@
         "on-click": "playerctl play-pause",
         "on-click-right": "playerctl next",
         "on-double-click": "playerctl previous",
-        "tooltip-format": "{}",
+        "tooltip-format": "{dynamic}",
     },
     "clock": {
         "format-alt": "{:%b\n%d}", /*  */ 
