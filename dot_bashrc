@@ -29,6 +29,7 @@ alias cls='clear'
 alias pipes="~/.config/pipes.sh/pipes.sh"
 alias rss="newsboat"
 alias wallpaper="~/.scripts/reload-wallpaper.sh"
+alias emacs="emacs -nw"
 
 # history settings
 HISTSIZE=10000

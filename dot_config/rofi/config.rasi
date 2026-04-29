@@ -34,8 +34,8 @@ configuration {
 }
 
 #window {
-        anchor:   west;
-        location: center;
+        anchor:   south;
+        location: north;
         width:    500px;
         height:   50%;
         border:   1px 1px 1px 1px;
@@ -140,18 +140,18 @@ element alternate.active {
 }
 
 button {
-        padding: 8px;
+        padding: 8px 8px 8px 0px;
 }
 
 button selected {
-        background-color: @active-background;
-        text-color:       @background-color;
+        text-color: @accent2-color;
+        background-color: @urgent-color;
 }
 
 sidebar {
-    border: 0px;
+    border: 1px;
     border-color: @accent2-color;
-    border-radius: 0px;
+    border-radius: 1px;
 }
 
 scrollbar {

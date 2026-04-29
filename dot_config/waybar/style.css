@@ -94,8 +94,10 @@
 
 #clock {
   color: #7DF9FF;
+  font-size: 20px;
   /* margin-right: 1rem; */
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
+
 }
 
 #battery {

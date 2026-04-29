@@ -4,9 +4,9 @@
     "width": 50, 
     "height": "fit",
 
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["clock", "hyprland/workspaces"],
     "modules-center": ["mpris"],
-    "modules-right": ["pulseaudio", "cpu", "temperature", "network", "battery", "clock"],
+    "modules-right": ["pulseaudio", "cpu", "temperature", "network", "battery"],
     "hyprland/workspaces": {
          "on-click": "activate",
          "active-only": false,
@@ -94,7 +94,7 @@
         },
         // "format": " {capacity}%"
         "format": "{capacity}%",
-        "format-plugged": " {capacity}% (AC) "
+        "format-plugged": "(AC)"
     },
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
