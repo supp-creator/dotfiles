@@ -10,7 +10,7 @@ vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cursorline = true
 
-
+vim.cmd.colorscheme("vim")
 vim.g.mapleader = " "
 
 
@@ -42,9 +42,9 @@ require("lazy").setup({
         "tiagovla/tokyodark.nvim",
         name = 'tokyodark',
         priority = 1000,
-        config = function()
-            vim.cmd.colorscheme("tokyodark")
-        end,
+        -- config = function()
+            -- vim.cmd.colorscheme("tokyodark")
+        -- end,
     },
     {
         "saecki/crates.nvim",
@@ -58,6 +58,7 @@ require("lazy").setup({
         "rcarriga/nvim-notify",
         config = function()
             vim.notify = require("notify")
+            background_color = "#000000"
         end,
     },
     {
@@ -86,7 +87,12 @@ require("lazy").setup({
         build = ':TSUpdate'
     },
     {
-        "catppuccin/nvim", name = "catppuccin", priority = 1000
+        "catppuccin/nvim",
+        name = "catppuccin",
+        -- priority = 1000,
+        -- config = function()
+            -- vim.cmd.colorscheme("catpuccin-macchiato")
+        -- end,
     },
     {
         "MunifTanjim/nui.nvim",
@@ -416,7 +422,6 @@ require("mason-lspconfig").setup({
         "lua_ls",
         "bsl_ls",
         "clojure-lsp",
-        "rust_analyzer",
     },
 })
 
