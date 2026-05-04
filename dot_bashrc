@@ -30,6 +30,8 @@ alias rss="newsboat"
 alias wallpaper="~/.scripts/reload-wallpaper.sh"
 alias emacs="emacs -nw"
 
+alias zed="zeditor"
+
 # history settings
 HISTSIZE=10000
 HISTFILESIZE=20000
