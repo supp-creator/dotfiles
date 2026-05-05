@@ -19,6 +19,39 @@ return {
 			require("lualine").setup({})
 		end,
 	},
+    --Indentation lines
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = {
+            scope = {
+                enabled = true,
+                show_start = false,
+                show_end = false,
+            },
+            exclude = {
+                filetypes = {
+                    "alpha",
+                    "trouble",
+                    "snacks_dashboard",
+                    "Trouble",
+                    "dashboard",
+                    "neo-tree",
+                    "help",
+                    "lazy",
+                    "mason",
+                    "notify",
+                    "toggleterm",
+                },
+                buftypes = {
+                    "terminal",
+                    "nofile",
+                    "quickfix",
+                    "prompt",
+                },
+            },
+        },
+    },
 	-- Dashboard
 	{
 		"nvimdev/dashboard-nvim",

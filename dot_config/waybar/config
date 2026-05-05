@@ -69,7 +69,7 @@
     "cpu": {
         "interval": 10,
         "format": "{usage}%",
-        "on-click-right": "ghostty -e htop"
+        "on-click-right": "wezterm -e htop"
            },
     "memory": {
         "interval": 30,
@@ -85,7 +85,7 @@
         "tooltip-format": " {ifname} via {gwaddri}",
         "tooltip-format-wifi": "   {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
         "on-click": "nm-connection-editor",
-        "on-click-right": "ghostty -e nmtui"
+        "on-click-right": "wezterm -e impala"
     },
     "battery": {
         "states": {
