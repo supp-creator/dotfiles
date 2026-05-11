@@ -30,7 +30,8 @@ alias rss="newsboat"
 alias wallpaper="~/.scripts/reload-wallpaper.sh"
 alias emacs="emacs -nw"
 
-alias zed="zeditor"
+alias zen="app.zen_browser.zen"
+alias calendar="calendar-rs"
 
 # history settings
 HISTSIZE=10000

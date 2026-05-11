@@ -15,7 +15,7 @@
 
 @define-color overlay1 #6c7086;
 @define-color overlay2  #7f849c;
-@define-color surface0 #000000;
+@define-color surface0 transparent;
 
 @define-color blue      #89b4fa;
 @define-color lavender  #ffc7d6;
@@ -42,8 +42,8 @@
 }
 
 #waybar {
-  background: @surface0;
-  color: #000000;
+  background: transparent;
+  color: transparent;
   margin: 8px 4px 4px 8px;
   opacity: 1.0;
   /* border-radius: 12px; */
@@ -88,7 +88,7 @@
 #custom-power {
   background-color: @surface0;
   padding: 8px 6px;
-  margin: 4px 0px;
+  margin: 4px;
   border-radius: 8px;
 }
 
@@ -133,7 +133,7 @@
 
 #mpris {
   color: #7DF9FF;
-  background-color: #0A0520;
+  background-color: transparent;/*#0A0520*/
   
 }
 
