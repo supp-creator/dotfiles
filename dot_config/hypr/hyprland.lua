@@ -1,6 +1,6 @@
 
-require("~/.config/hypr/lua/autostart.lua")
-require("~/.config/hypr/lua/general.lua")
-require("~/.config/hypr/lua/animations.lua")
-require("~/.config/hypr/lua/windowrules.lua")
-require("~/.config/hypr/lua/binds.lua")
+require("lua.autostart")
+require("lua.general")
+require("lua.animations")
+require("lua.windowrules")
+require("lua.binds")

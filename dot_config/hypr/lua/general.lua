@@ -4,8 +4,8 @@ hl.config({
         gaps_in = 5,
         gaps_out = 10,
         border_size = 2,
-        gaps_workspace = 0,
-        layout = dwindle, --master/scrolling/dwindle/monocle
+        -- gaps_workspace = 0,
+        layout = "dwindle", --master/scrolling/dwindle/monocle
         allow_tearing = false,
         resize_on_border = true
     },
@@ -30,7 +30,7 @@ hl.config({
 
 hl.config({
     misc = {
-        force_defualt_wallpaper = -1.
+        force_default_wallpaper = -1,
         disable_hyprland_logo = false,
     },
 })
@@ -39,7 +39,7 @@ hl.monitor({
     output = "",
     mode = "preferred",
     position = "auto",
-    scale = "auto",
+    scale = 1,
 })
 
 hl.config({
@@ -74,7 +74,7 @@ hl.config({
 
 hl.config({
     dwindle = {
-        pseudotile = true,
+        -- pseudotile = true,
         preserve_split = true,
     },
 })
@@ -84,15 +84,15 @@ hl.config({
         allow_small_split = true,
         special_scale_factor = 0.5,
         mfact = 0.6,
-        new_status = slave,
+        new_status = "slave",
         new_on_top = true,
         orientation = "left",
     },
 })
 
-hl.gesture({
-    workspace_swipe_touch = false,
-})
+-- hl.gesture({
+    -- workspace_swipe_touch = false,
+-- })
 
 --ENVIRONMENT
 

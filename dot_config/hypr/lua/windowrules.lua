@@ -1,3 +1,5 @@
+browser = "firefox"
+
 hl.window_rule({
     match = { class = "pavucontrol" },
     center = true,
@@ -13,7 +15,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = "app.zen_browser.zen" },
+    match = { class = browser },
     center = true,
 })
 
@@ -38,7 +40,8 @@ hl.window_rule({
 
 hl.window_rule({
     match = { class = "blueman-manager" },
-    float = true
+    float = true,
+    size = {"(monitor_h*0.50)", "(monitor_h*0.60)"}
 })
 
 hl.window_rule({
