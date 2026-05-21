@@ -86,7 +86,7 @@ hl.config({
         mfact = 0.6,
         new_status = "slave",
         new_on_top = true,
-        orientation = "left",
+        orientation = "right",
     },
 })
 

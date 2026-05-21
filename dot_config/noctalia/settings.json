@@ -43,16 +43,16 @@
         "autoHideDelay": 500,
         "autoShowDelay": 150,
         "backgroundOpacity": 0.93,
-        "barType": "simple",
+        "barType": "floating",
         "capsuleColorKey": "none",
         "capsuleOpacity": 1,
-        "contentPadding": 7,
+        "contentPadding": 9,
         "density": "comfortable",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
-        "fontScale": 1.05,
-        "frameRadius": 12,
-        "frameThickness": 5,
+        "fontScale": 1.03,
+        "frameRadius": 24,
+        "frameThickness": 4,
         "hideOnOverview": false,
         "marginHorizontal": 4,
         "marginVertical": 4,
@@ -74,10 +74,40 @@
         "showCapsule": false,
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
-        "useSeparateOpacity": false,
-        "widgetSpacing": 14,
+        "useSeparateOpacity": true,
+        "widgetSpacing": 21,
         "widgets": {
             "center": [
+                {
+                    "defaultSettings": {
+                        "animate_window": true,
+                        "animation_cards_duration": 750,
+                        "animation_window_duration": 500,
+                        "background_color": null,
+                        "background_opacity": null,
+                        "card_height": 350,
+                        "card_spacing": 6,
+                        "card_strip_width": 90,
+                        "cards_shown": 11,
+                        "center_width_ratio": 0.33,
+                        "hide_help": false,
+                        "hide_top_bar": false,
+                        "image_filter": [
+                            "png",
+                            "jpg",
+                            "jpeg"
+                        ],
+                        "live_preview": false,
+                        "selected_filter": "images",
+                        "shear_factor": -0.25,
+                        "top_bar_height": 35,
+                        "video_filter": [
+                            "mp4",
+                            "avi"
+                        ]
+                    },
+                    "id": "plugin:wallcards"
+                },
                 {
                     "characterCount": 2,
                     "colorizeIcons": false,
@@ -87,7 +117,7 @@
                     "followFocusedScreen": false,
                     "fontWeight": "bold",
                     "groupedBorderOpacity": 1,
-                    "hideUnoccupied": false,
+                    "hideUnoccupied": true,
                     "iconScale": 0.8,
                     "id": "Workspace",
                     "labelMode": "index",
@@ -107,13 +137,13 @@
                     "maxWidth": 145,
                     "panelShowAlbumArt": true,
                     "scrollingMode": "always",
-                    "showAlbumArt": true,
-                    "showArtistFirst": true,
-                    "showProgressRing": true,
+                    "showAlbumArt": false,
+                    "showArtistFirst": false,
+                    "showProgressRing": false,
                     "showVisualizer": true,
                     "textColor": "primary",
                     "useFixedWidth": false,
-                    "visualizerType": "wave"
+                    "visualizerType": "linear"
                 }
             ],
             "left": [
@@ -157,12 +187,11 @@
             ],
             "right": [
                 {
-                    "hideWhenZero": false,
-                    "hideWhenZeroUnread": false,
-                    "iconColor": "tertiary",
-                    "id": "NotificationHistory",
-                    "showUnreadBadge": true,
-                    "unreadBadgeColor": "secondary"
+                    "displayMode": "onhover",
+                    "iconColor": "primary",
+                    "id": "Volume",
+                    "middleClickCommand": "pavucontrol",
+                    "textColor": "secondary"
                 },
                 {
                     "deviceNativePath": "__default__",
@@ -174,11 +203,12 @@
                     "showPowerProfiles": false
                 },
                 {
-                    "displayMode": "onhover",
+                    "hideWhenZero": false,
+                    "hideWhenZeroUnread": false,
                     "iconColor": "primary",
-                    "id": "Volume",
-                    "middleClickCommand": "pavucontrol",
-                    "textColor": "secondary"
+                    "id": "NotificationHistory",
+                    "showUnreadBadge": true,
+                    "unreadBadgeColor": "none"
                 }
             ]
         }
@@ -212,7 +242,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Eldritch",
+        "predefinedScheme": "Rosey AMOLED",
         "schedulingMode": "off",
         "syncGsettings": true,
         "useWallpaperColors": false
@@ -282,11 +312,42 @@
         "gridSnap": false,
         "gridSnapScale": false,
         "monitorWidgets": [
+            {
+                "name": "eDP-1",
+                "widgets": [
+                    {
+                        "colorName": "primary",
+                        "height": 72,
+                        "hideWhenIdle": false,
+                        "id": "AudioVisualizer",
+                        "roundedCorners": true,
+                        "scale": 1,
+                        "showBackground": true,
+                        "visualizerType": "linear",
+                        "width": 320,
+                        "x": 71,
+                        "y": 1001
+                    },
+                    {
+                        "clockColor": "none",
+                        "clockStyle": "analog",
+                        "customFont": "",
+                        "format": "HH:mm\\nd MMMM yyyy",
+                        "id": "Clock",
+                        "roundedCorners": true,
+                        "scale": 1,
+                        "showBackground": true,
+                        "useCustomFont": false,
+                        "x": 1749,
+                        "y": 924
+                    }
+                ]
+            }
         ],
         "overviewEnabled": true
     },
     "dock": {
-        "animationSpeed": 1,
+        "animationSpeed": 1.2000000000000002,
         "backgroundOpacity": 1,
         "colorizeIcons": false,
         "deadOpacity": 0.54,
@@ -294,9 +355,9 @@
         "dockType": "floating",
         "enabled": true,
         "floatingRatio": 0,
-        "groupApps": false,
-        "groupClickAction": "cycle",
-        "groupContextMenuMode": "extended",
+        "groupApps": true,
+        "groupClickAction": "list",
+        "groupContextMenuMode": "list",
         "groupIndicatorStyle": "dots",
         "inactiveIndicators": false,
         "indicatorColor": "secondary",
@@ -309,7 +370,7 @@
         "monitors": [
             "eDP-1"
         ],
-        "onlySameOutput": true,
+        "onlySameOutput": false,
         "pinnedApps": [
         ],
         "pinnedStatic": false,
@@ -317,7 +378,7 @@
         "showDockIndicator": true,
         "showLauncherIcon": false,
         "sitOnFrame": false,
-        "size": 0.72
+        "size": 1.31
     },
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
@@ -327,13 +388,13 @@
         "autoStartAuth": false,
         "avatarImage": "/home/tyrone/.face",
         "boxRadiusRatio": 1,
-        "clockFormat": "hh\\nmm",
+        "clockFormat": "hh\\nmm MM/dd/yyyy dddd",
         "clockStyle": "custom",
         "compactLockScreen": false,
         "dimmerOpacity": 0.2,
         "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
-        "enableLockScreenMediaControls": false,
+        "enableLockScreenMediaControls": true,
         "enableShadows": true,
         "forceBlackScreenCorners": false,
         "iRadiusRatio": 1,
@@ -364,12 +425,12 @@
         "language": "",
         "lockOnSuspend": true,
         "lockScreenAnimations": false,
-        "lockScreenBlur": 0,
+        "lockScreenBlur": 0.5,
         "lockScreenCountdownDuration": 10000,
         "lockScreenMonitors": [
         ],
-        "lockScreenTint": 0,
-        "passwordChars": false,
+        "lockScreenTint": 0.05,
+        "passwordChars": true,
         "radiusRatio": 1,
         "reverseScroll": false,
         "scaleRatio": 1,
@@ -398,7 +459,7 @@
     },
     "idle": {
         "customCommands": "[]",
-        "enabled": false,
+        "enabled": true,
         "fadeDuration": 5,
         "lockCommand": "",
         "lockTimeout": 660,
@@ -502,7 +563,7 @@
     "sessionMenu": {
         "countdownDuration": 10000,
         "enableCountdown": true,
-        "largeButtonsLayout": "single-row",
+        "largeButtonsLayout": "grid",
         "largeButtonsStyle": true,
         "position": "center",
         "powerOptions": [
@@ -634,7 +695,7 @@
         ],
         "fillColor": "#000000",
         "fillMode": "crop",
-        "hideWallpaperFilenames": false,
+        "hideWallpaperFilenames": true,
         "linkLightAndDarkWallpapers": true,
         "monitorDirectories": [
         ],
@@ -644,29 +705,25 @@
         "panelPosition": "top_center",
         "randomIntervalSec": 300,
         "setWallpaperOnAllMonitors": true,
-        "showHiddenFiles": false,
+        "showHiddenFiles": true,
         "skipStartupTransition": false,
         "solidColor": "#1a1a2e",
         "sortOrder": "name",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": [
-            "fade",
             "disc",
-            "stripes",
-            "wipe",
-            "pixelate",
             "honeycomb"
         ],
         "useOriginalImages": true,
         "useSolidColor": false,
         "useWallhaven": true,
-        "viewMode": "recursive",
+        "viewMode": "single",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
-        "wallhavenQuery": "",
+        "wallhavenQuery": "digital art",
         "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",

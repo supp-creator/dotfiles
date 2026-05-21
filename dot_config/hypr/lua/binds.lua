@@ -11,11 +11,15 @@ hl.bind("SUPER + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind("SUPER + P", hl.dsp.window.pseudo({ action = "toggle" }))
 
 
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind("SUPER + mouse:272", hl.dsp.window.resize(), { mouse = true })
+
+
 hl.bind("SUPER + B", hl.dsp.exec_cmd(browser))
 -- hl.bind("SUPER + D", hl.dsp.exec_cmd("rofi -show"))
 hl.bind("SUPER + W", hl.dsp.exec_cmd("wlogout"))
 hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd("~/.scripts/reload-waybar.sh"))
-hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
+-- hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind("SUPER + N", hl.dsp.exec_cmd("swaync-client -t"))
 hl.bind("SUPER + Space", hl.dsp.exec_cmd(file_manager))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
@@ -62,3 +66,5 @@ hl.bind("SUPER + S", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call controlCente
 hl.bind("SUPER + H", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call settings toggle"))
 
 hl.bind("SUPER + A", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call wallpaper toggle"))
+
+hl.bind("SUPER + L", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call lockScreen lock"))

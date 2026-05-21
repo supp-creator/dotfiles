@@ -8,7 +8,7 @@
     ],
     "states": {
         "wallcards": {
-            "enabled": false,
+            "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         }
     },

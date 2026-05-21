@@ -58,3 +58,7 @@ hl.window_rule({
     match = { class = "wlogout" },
     animation = "popin"
 })
+
+
+-- workspace rules --
+
