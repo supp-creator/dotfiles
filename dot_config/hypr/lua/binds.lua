@@ -57,6 +57,8 @@ hl.bind("SUPER + SHIFT + 7", hl.dsp.window.move({ workspace = 7}))
 hl.bind("SUPER + SHIFT + 8", hl.dsp.window.move({ workspace = 8}))
 hl.bind("SUPER + SHIFT + 9", hl.dsp.window.move({ workspace = 9}))
 
+hl.bind("SUPER + Tab", hl.dsp.window.cycle_next())
+
 -- noctalia --
 
 hl.bind("SUPER + D", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call launcher toggle"))

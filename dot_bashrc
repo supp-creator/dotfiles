@@ -28,12 +28,13 @@ alias cls='clear'
 alias pipes="~/.config/pipes.sh/pipes.sh"
 alias rss="newsboat"
 alias wallpaper="~/.scripts/reload-wallpaper.sh"
-alias emacs="emacs -nw"
 
 alias zen="app.zen_browser.zen"
 alias calendar="calendar-rs"
 alias noctalia="qs -c noctalia-shell ipc call"
 alias pretty-log="~/.scripts/pretty-git-log.sh"
+alias plantuml='java -jar /home/tyrone/Applications/plantuml.jar'
+
 # history settings
 HISTSIZE=10000
 HISTFILESIZE=20000

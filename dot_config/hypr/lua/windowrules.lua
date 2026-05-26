@@ -1,4 +1,6 @@
 browser = "firefox"
+terminal = "wezterm"
+file_manager = "thunar"
 
 hl.window_rule({
     match = { class = "pavucontrol" },
@@ -20,13 +22,13 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = "alacritty" },
+    match = { class = terminal },
     center = true,
     float = true
 })
 
 hl.window_rule({
-    match = { class = "thunar" },
+    match = { class = file_manager },
     center = true,
     float = true,
     size = {"(monitor_w*0.60)", "(monitor_h*0.45)"}
