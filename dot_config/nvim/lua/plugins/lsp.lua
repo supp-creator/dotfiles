@@ -13,6 +13,35 @@ return {
 	-- Rust
 	{
 		"mrcjkb/rustaceanvim",
+		config = function()
+			vim.g.rustaceanvim = {
+				server = {
+					on_attach = function(client, bufnr)
+						vim.keymap.set("n", "<leader>rr", function()
+							vim.cmd.RustLsp("runnables")
+						end, { buffer = bufnr, desc = "Rust runnables" })
+						vim.keymap.set("n", "<leader>rd", function()
+							vim.cmd.RustLsp("debuggables")
+						end, { buffer = bufnr, desc = "Rust debuggables" })
+						vim.keymap.set("n", "K", function()
+							vim.cmd.RustLsp({ "hover", "actions" })
+						end, { buffer = bufnr, desc = "Rust hover actions" })
+					end,
+					default_settings = {
+						["rust-analyzer"] = {
+							checkOnSave = {
+								command = "clippy",
+							},
+							completion = {
+								postfix = {
+									enable = true,
+								},
+							},
+						},
+					},
+				},
+			}
+		end,
 	},
 	-- Rust crates
 	{

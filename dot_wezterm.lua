@@ -7,7 +7,7 @@ config.enable_wayland = false
 config.font = wezterm.font('JetBrains Mono', { weight = 'Regular' })
 config.font_size = 12.0
 
-config.color_scheme = 'tokyonight'
+config.color_scheme = 'Abernathy'
 
 config.window_background_opacity = 1.00
 config.macos_window_background_blur = 20

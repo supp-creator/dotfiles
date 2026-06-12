@@ -242,7 +242,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Rosey AMOLED",
+        "predefinedScheme": "Neon Surf",
         "schedulingMode": "off",
         "syncGsettings": true,
         "useWallpaperColors": false
@@ -262,7 +262,7 @@
                 "id": "audio-card"
             },
             {
-                "enabled": false,
+                "enabled": true,
                 "id": "brightness-card"
             },
             {
@@ -308,7 +308,7 @@
         }
     },
     "desktopWidgets": {
-        "enabled": false,
+        "enabled": true,
         "gridSnap": false,
         "gridSnapScale": false,
         "monitorWidgets": [
@@ -316,30 +316,17 @@
                 "name": "eDP-1",
                 "widgets": [
                     {
-                        "colorName": "primary",
-                        "height": 72,
-                        "hideWhenIdle": false,
-                        "id": "AudioVisualizer",
-                        "roundedCorners": true,
-                        "scale": 1,
-                        "showBackground": true,
-                        "visualizerType": "linear",
-                        "width": 320,
-                        "x": 71,
-                        "y": 1001
-                    },
-                    {
-                        "clockColor": "none",
-                        "clockStyle": "analog",
+                        "clockColor": "tertiary",
+                        "clockStyle": "minimal",
                         "customFont": "",
-                        "format": "HH:mm\\nd MMMM yyyy",
+                        "format": "HH:mm",
                         "id": "Clock",
                         "roundedCorners": true,
-                        "scale": 1,
-                        "showBackground": true,
+                        "scale": 3.862382981634419,
+                        "showBackground": false,
                         "useCustomFont": false,
-                        "x": 1749,
-                        "y": 924
+                        "x": 795,
+                        "y": 33
                     }
                 ]
             }
@@ -350,7 +337,7 @@
         "animationSpeed": 1.2000000000000002,
         "backgroundOpacity": 1,
         "colorizeIcons": false,
-        "deadOpacity": 0.54,
+        "deadOpacity": 0.73,
         "displayMode": "auto_hide",
         "dockType": "floating",
         "enabled": true,
@@ -378,7 +365,7 @@
         "showDockIndicator": true,
         "showLauncherIcon": false,
         "sitOnFrame": false,
-        "size": 1.31
+        "size": 1.1300000000000001
     },
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
@@ -425,7 +412,7 @@
         "language": "",
         "lockOnSuspend": true,
         "lockScreenAnimations": true,
-        "lockScreenBlur": 0.5,
+        "lockScreenBlur": 0,
         "lockScreenCountdownDuration": 1000,
         "lockScreenMonitors": [
         ],
@@ -448,7 +435,7 @@
     "hooks": {
         "colorGeneration": "",
         "darkModeChange": "",
-        "enabled": false,
+        "enabled": true,
         "performanceModeDisabled": "",
         "performanceModeEnabled": "",
         "screenLock": "",
@@ -717,13 +704,13 @@
         ],
         "useOriginalImages": true,
         "useSolidColor": false,
-        "useWallhaven": false,
+        "useWallhaven": true,
         "viewMode": "single",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
-        "wallhavenQuery": "apothecary diaries",
+        "wallhavenQuery": "hunter x hunter",
         "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",
