@@ -308,7 +308,7 @@
         }
     },
     "desktopWidgets": {
-        "enabled": true,
+        "enabled": false,
         "gridSnap": false,
         "gridSnapScale": false,
         "monitorWidgets": [
@@ -661,9 +661,9 @@
     },
     "ui": {
         "boxBorderEnabled": false,
-        "fontDefault": "JetBrains Mono SemiBold",
+        "fontDefault": "FiraCode Nerd Font Mono",
         "fontDefaultScale": 1,
-        "fontFixed": "JetBrains Mono",
+        "fontFixed": "FiraCode Nerd Font",
         "fontFixedScale": 1,
         "panelBackgroundOpacity": 0.93,
         "panelsAttachedToBar": false,
@@ -704,13 +704,13 @@
         ],
         "useOriginalImages": true,
         "useSolidColor": false,
-        "useWallhaven": true,
+        "useWallhaven": false,
         "viewMode": "single",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
-        "wallhavenQuery": "hunter x hunter",
+        "wallhavenQuery": "one piece ",
         "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",

@@ -1,4 +1,4 @@
-terminal = "wezterm"
+terminal = "kitty"
 browser = "firefox"
 file_manager = "thunar"
 

@@ -15,6 +15,18 @@ return {
 		end,
 		dependencies = { "nvim-tree/nvim-web-devicons", "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
 	},
+    {
+        "nvim-telescope/telescope.nvim", version = "*",
+        dependencies = {
+            "nvim-plenary/plenary.nvim",
+            { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+        }
+    },
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = true
+    },
 	-- Git integration
 	{
 		"NeogitOrg/neogit",

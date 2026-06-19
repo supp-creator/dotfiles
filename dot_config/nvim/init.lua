@@ -7,7 +7,7 @@ require("config.options")
 require("config.keymaps")
 
 -- Load autocmds
-require("config.autocmds")
+--require("config.autocmds")
 
 -- Bootstrap and setup lazy.nvim
 require("config.lazy")
