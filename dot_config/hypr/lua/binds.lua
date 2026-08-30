@@ -19,11 +19,12 @@ hl.bind("SUPER + B", hl.dsp.exec_cmd(browser))
 -- hl.bind("SUPER + D", hl.dsp.exec_cmd("rofi -show"))
 hl.bind("SUPER + W", hl.dsp.exec_cmd("wlogout"))
 hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd("~/.scripts/reload-waybar.sh"))
--- hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind("SUPER + N", hl.dsp.exec_cmd("swaync-client -t"))
 hl.bind("SUPER + Space", hl.dsp.exec_cmd(file_manager))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
-hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"))
+hl.bind("Print", hl.dsp.exec_cmd("QT_QPA_PLATFORM=wayland flameshot gui </dev/null"))
+
 
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true })
@@ -61,7 +62,9 @@ hl.bind("SUPER + Tab", hl.dsp.window.cycle_next())
 
 -- noctalia --
 
-hl.bind("SUPER + D", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call launcher toggle"))
+--hl.bind("SUPER + D", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call launcher toggle"))
+
+hl.bind("SUPER + D", hl.dsp.exec_cmd("fuzzel"))
 
 hl.bind("SUPER + S", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call controlCenter toggle"))
 
@@ -69,4 +72,14 @@ hl.bind("SUPER + H", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call settings tog
 
 hl.bind("SUPER + A", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call wallpaper toggle"))
 
-hl.bind("SUPER + L", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call lockScreen lock"))
+--hl.bind("SUPER + L", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call lockScreen lock"))
+
+hl.bind("SUPER + X", function ()
+    if hl.get_workspace("special:minimized") then
+        hl.dispatch(hl.dsp.window.move({ workspace = hl.get_active_workspace(), window = "tag:minimized" }))
+        hl.dispatch(hl.dsp.window.clear_tags({ window = "tag:minimized" }))
+    else
+        hl.dispatch(hl.dsp.window.tag({ tag = "minimized", window = hl.get_active_window() }))
+        hl.dispatch(hl.dsp.window.move({ workspace = "special:minimized", follow = false }))
+    end
+end)

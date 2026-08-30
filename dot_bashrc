@@ -1,10 +1,6 @@
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-
-# ── retro bash config ──────────────────────────────────────
-# paste into ~/.bashrc then run: source ~/.bashrc
-
 # colors
 export TERM="xterm-256color"
 export CLICOLOR=1
@@ -29,6 +25,9 @@ alias pipes="~/.config/pipes.sh/pipes.sh"
 alias rss="newsboat"
 alias wallpaper="~/.scripts/reload-wallpaper.sh"
 
+
+alias matlab='distrobox enter matlab-box -- env QT_QPA_PLATFORM=xcb /home/$USER/matlab/bin/matlab -desktop'
+
 alias zen="app.zen_browser.zen"
 alias calendar="calendar-rs"
 alias noctalia="qs -c noctalia-shell ipc call"
@@ -41,17 +40,10 @@ HISTFILESIZE=20000
 HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
 
-# startup banner (requires: sudo apt install figlet lolcat)
 # swap lolcat for: | cat  (no color) or | ccze (amber/green)
 if command -v figlet &>/dev/null; then
   figlet -f slant "TERMINAL" | lolcat 2>/dev/null || figlet -f slant "TERMINAL"
 fi
 
-# system info on startup (requires: sudo apt install neofetch)
-if command -v neofetch &>/dev/null; then
-  neofetch
-fi
-
-# ── end retro config ────────────────────────────────────────
-
-
+# Starship
+# eval "$(starship init bash)"
