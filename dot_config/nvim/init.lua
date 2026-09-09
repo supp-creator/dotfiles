@@ -22,4 +22,4 @@ require("lsp.config")
 require("lsp.keymaps")
 
 -- Set colorscheme (fallback to default if tokyodark fails)
-pcall(vim.cmd.colorscheme, "tokyodark")
+pcall(vim.cmd.colorscheme, "catppuccin")

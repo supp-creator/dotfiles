@@ -25,6 +25,7 @@ alias pipes="~/.config/pipes.sh/pipes.sh"
 alias rss="newsboat"
 alias wallpaper="~/.scripts/reload-wallpaper.sh"
 
+alias eww="~/eww/target/release/eww"
 
 alias matlab='distrobox enter matlab-box -- env QT_QPA_PLATFORM=xcb /home/$USER/matlab/bin/matlab -desktop'
 

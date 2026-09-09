@@ -1,5 +1,5 @@
 terminal = "kitty"
-browser = "firefox"
+browser = "MOZ_ENABLE_WAYLAND=1 firefox"
 file_manager = "thunar"
 
 
@@ -10,14 +10,12 @@ hl.bind("SUPER + T", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind("SUPER + P", hl.dsp.window.pseudo({ action = "toggle" }))
 
-
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:272", hl.dsp.window.resize(), { mouse = true })
 
 
 hl.bind("SUPER + B", hl.dsp.exec_cmd(browser))
--- hl.bind("SUPER + D", hl.dsp.exec_cmd("rofi -show"))
-hl.bind("SUPER + W", hl.dsp.exec_cmd("wlogout"))
+hl.bind("SUPER + W", hl.dsp.exec_cmd("~/eww/target/release/eww open logout"))
 hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd("~/.scripts/reload-waybar.sh"))
 hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind("SUPER + N", hl.dsp.exec_cmd("swaync-client -t"))
@@ -58,7 +56,26 @@ hl.bind("SUPER + SHIFT + 7", hl.dsp.window.move({ workspace = 7}))
 hl.bind("SUPER + SHIFT + 8", hl.dsp.window.move({ workspace = 8}))
 hl.bind("SUPER + SHIFT + 9", hl.dsp.window.move({ workspace = 9}))
 
-hl.bind("SUPER + Tab", hl.dsp.window.cycle_next())
+
+
+hl.bind("ALT + 1", hl.dsp.window.move({ workspace = 1, follow = false}))
+hl.bind("ALT + 2", hl.dsp.window.move({ workspace = 2, follow = false}))
+hl.bind("ALT + 3", hl.dsp.window.move({ workspace = 3, follow = false}))
+hl.bind("ALT + 4", hl.dsp.window.move({ workspace = 4, follow = false}))
+hl.bind("ALT + 5", hl.dsp.window.move({ workspace = 5, follow = false}))
+hl.bind("ALT + 6", hl.dsp.window.move({ workspace = 6, follow = false}))
+hl.bind("ALT + 7", hl.dsp.window.move({ workspace = 7, follow = false}))
+hl.bind("ALT + 8", hl.dsp.window.move({ workspace = 8, follow = false}))
+hl.bind("ALT + 9", hl.dsp.window.move({ workspace = 9, follow = false}))
+
+
+hl.bind("SUPER + M", function()
+    hl.dispatch(hl.dsp.window.float({ window = activewindow, action = toggle}))
+    hl.dispatch(hl.dsp.window.resize({ window = activewindow, x = 925, y = 675, relative = false }))
+    hl.dispatch(hl.dsp.window.center({ window = activewindow }))
+end)
+
+
 
 -- noctalia --
 
@@ -70,9 +87,12 @@ hl.bind("SUPER + S", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call controlCente
 
 hl.bind("SUPER + H", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call settings toggle"))
 
-hl.bind("SUPER + A", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call wallpaper toggle"))
+-- hl.bind("SUPER + A", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call wallpaper toggle"))
 
 --hl.bind("SUPER + L", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call lockScreen lock"))
+
+hl.bind("SUPER + A", hl.dsp.exec_cmd("swaybg -i $(hellpaper ~/Downloads/Wallpapers/) -m fill"))
+
 
 hl.bind("SUPER + X", function ()
     if hl.get_workspace("special:minimized") then

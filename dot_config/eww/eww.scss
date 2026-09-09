@@ -1,0 +1,145 @@
+* {
+  all: unset;
+}
+
+.clock-widget {
+  background-color: rgba(255, 255, 255, 0.08); // frosted glass base
+  border-radius: 16px;
+  padding: 10px 20px;
+  margin: 0px 0px 0px 0px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15); 
+}
+
+.clock-time {
+ font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 26px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); // keeps it legible over busy wallpapers
+}
+
+.clock-date {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.80);
+  margin-top: -2px;
+  letter-spacing: 0.5px;
+}
+
+
+.logout-widget {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  padding: 28px 24px;
+  border: 2px solid rgba(255,255,255,0.18);
+}
+
+.logout-btn {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  padding: 12px 28px;
+  margin: 6px 0;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+
+  &:nth-child(1) { border: 0px; }
+  &:nth-child(2) { background: #F37F94; }
+  &:nth-child(3) { background: #78CDD0; }
+  &:nth-child(4) { background: #00B49B; }
+  &:nth-child(5) { background: #A36AA5; }
+  &:nth-child(6) { background: #F3A257; }
+}
+
+
+.battery-widget {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.battery-icon {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-right: 8px;
+}
+
+.battery-percent {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.RAM-widget {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.RAM-percent {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.cpu-widget {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.cpu-percent {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.temperature-widget {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.cpu-temp {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.volume-layout {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.volume-text {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+}
+

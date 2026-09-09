@@ -1,0 +1,121 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+    min-height: 0;
+    font-weight: bold;
+}
+
+
+@define-color bg         #FFFFFF;
+@define-color fg         #AB2439;
+@define-color color2     #CC1236;
+@define-color color1     #1C1C1C;
+
+tooltip {
+    background: @bg;
+}
+
+tooltip label {
+    color: @fg;
+    font-family: "JetBrainsMono", monospace;
+    font-size: 13px;
+}
+
+#tray {
+    color: @color2;
+}
+
+
+window#waybar {
+    background: @bg;
+}
+
+#clock {
+    background: @bg;
+    color: @color2;
+    font-weight: 600;
+    padding: 0 14px;
+    border-radius: 999px 0 0 999px;
+}
+
+#workspaces {
+    background: @bg;
+    border-radius: 0 999px 999px 0;
+    padding: 0 6px 0 2px;
+    margin: 0;
+}
+
+#workspaces button {
+    color: @bg;
+    background: @color1;
+    padding: 4px 10px;
+    margin: 3px 2px;
+    border-radius: 999px;
+    min-width: 10px;
+}
+
+#workspaces button.active {
+    background: @color2;
+    color: @bg;
+    font-weight: 600;
+    padding: 4px 14px;
+}
+
+#workspaces button:hover {
+    background: alpha(@color1, 0.15);
+}
+
+#mpris {
+    background: @bg;
+    color: @color1;
+    padding: 0 16px;
+    border-radius: 999px;
+}
+
+#pulseaudio,
+#cpu,
+#memory,
+#temperature,
+#network,
+#upower,
+#battery {
+    background: @bg;
+    color: @fg;
+    padding: 0 10px;
+    border-radius: 0;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#upower {
+    color: @color1;
+}
+
+#pulseaudio {
+    border-radius: 999px 0 0 999px;
+    padding-left: 14px;
+    color: @color1;
+}
+
+#battery{
+    /* border-radius: 0 999px 999px 0; */
+    /* padding-right: 14px; */
+    color: @color1;
+}
+
+#cpu, #temperature, #memory, #network {
+    color: @color1;
+}
+
+#battery.charging {
+    color: @color1;
+}
+
+#battery.warning:not(.charging) {
+    color: #E8A87C;
+}
+
+#battery.critical:not(.charging) {
+    color: #C97064;
+}
+

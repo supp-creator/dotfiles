@@ -1,0 +1,192 @@
+;; Variables
+
+(defpoll hour_str :interval "1s"
+  "date '+%I:%M:%S '")
+
+
+(defpoll day_str :interval "1s"
+  "date '+%A
+%B %d %Y'")
+
+
+(defpoll battery-percent :interval "10s"
+    :initial "100"
+    'cat /sys/class/power_supply/BAT0/capacity')
+
+
+(defpoll battery-status :interval "10s"
+    :initial "Charging"
+    'cat /sys/class/power_supply/BAT0/status')
+
+
+(defpoll RAM-percent :interval "10s"
+    "awk '/MemTotal/{t=$2} /MemAvailable/{a=$2} END{printf \"%.0f\", (t-a)/t*100}' /proc/meminfo")
+
+(defpoll cpu-percent :interval "3s"
+  "top -bn1 | grep 'Cpu(s)' | awk '{printf \"%.0f\", 100 - $8}'")
+
+(defpoll cpu-temp :interval "3s"
+    "sensors | grep -m1 -E 'Tctl|Package id 0' | grep -oP '\\+\\K[0-9]+' | head -1")
+
+(defpoll volume :interval "1s"
+    "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2 * 100)\"%\"}'")
+
+(defpoll uptime :interval "1s"
+    "uptime -p")
+
+;; ** Widgets ********************************************************************
+
+(defwidget clock []
+  (box :class "clock-widget"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+    (label :class "clock-time" :text hour_str)
+    (label :class "clock-date" :text day_str)))
+
+(defwidget volume-widget []
+ (button :onclick "pavucontrol &"
+         :onscroll "echo {} | sed -e 's/up/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+/' -e 's/down/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-/' | sh"
+         :class "volume-button"
+         (box :class "volume-layout"
+              :orientation "h"
+              :halign "center"
+              (label :class "volume-text" :text "  ")
+              (label :class "volume-text" :text "${volume}"))))
+
+(defwidget logout []
+    (box :class "logout-widget"
+         :orientation "v"
+         :space-evenly false
+         :halign "center"
+       (label :class "logout-btn" :text "Been ${uptime}")
+       (button :onclick "systemctl poweroff" :class "logout-btn" "Turn Off")
+       (button :onclick "systemctl reboot" :class "logout-btn" "Reboot")
+       (button :onclick "hyprshutdown" :class "logout-btn" "Log Off")
+       (button :onclick "systemctl suspend" :class "logout-btn" "Sleep")
+       (button :onclick "~/eww/target/release/eww close logout" :class "logout-btn" "Cancel")))
+
+(defwidget battery []
+  (box :class "battery-widget"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+    (label :class "battery-icon"
+           :text {battery-status == "Charging" ? "󰂄" :
+                  battery-percent > 80 ? "󰂀" :
+                  battery-percent > 60 ? "󰂀" :
+                  battery-percent > 40 ? "󰁿" :
+                  battery-percent > 20 ? "󰁼" : "󰁺"})
+    (label :class "battery-percent" :text "${battery-percent}%")))
+
+(defwidget temperature [] 
+ (box :class "temperature-widget"
+      :orientation "h"
+      :space-evenly false
+      :halign "center"
+      (label :class "temperature" :text " 󰈸 ")
+      (label :class "temperature" :text "${cpu-temp} C")))
+
+(defwidget RAM [] 
+    (box :class "RAM-widget"
+         :orientation "h"
+         :space-evenly false
+         :halign "center"
+        (label :class "RAM-percent" :text " 󰍛 ")
+        (label :class "RAM-percent" :text "${RAM-percent}%")))
+
+(defwidget cpu [] 
+ (box :class "cpu-widget"
+      :orientation "h"
+      :space-evenly false
+      :halign "center"
+      (label :class "cpu-percent" :text " 󰓅 ")
+      (label :class "cpu-percent" :text "${cpu-percent}%")))
+
+
+;; ** Windows *******************************************************************
+
+(defwindow battery 
+    :monitor 0
+    :stacking "bg"
+    :windowtype "dock"
+    :wm-ignore false
+    :geometry (geometry :x "-8%"
+                        :y "1%"
+                        :width "410px"
+                        :height "50px"
+                        :anchor "top right")
+    (battery))
+
+(defwindow RAM
+    :monitor 0 
+    :stacking "bg"
+    :windowtype "dock"
+    :wm-ignore false
+    :geometry (geometry :x "-2.5%"
+                        :y "1%"
+                        :width "410px"
+                        :height "50px"
+                        :anchor "top right")
+    (RAM))
+
+(defwindow cpu 
+    :monitor 0 
+    :stacking "bg"
+    :windowtype "dock"
+    :wm-ignore false
+    :geometry (geometry :x "2.5%"
+                        :y "1%"
+                        :width "410px"
+                        :height "50px"
+                        :anchor "top right")
+    (cpu))
+
+(defwindow temperature 
+    :monitor 0 
+    :stacking "bg"
+    :windowtype "dock"
+    :wm-ignore false
+    :geometry (geometry :x "8%"
+                        :y "1%"
+                        :width "410px"
+                        :height "50px"
+                        :anchor "top right")
+    (temperature))
+
+(defwindow volume-window
+    :monitor 0
+    :stacking "bg"
+    :windowtype "dock"
+    :wm-ignore false
+    :geometry (geometry :x "13.5%"
+                        :y "1%"
+                        :width "410px"
+                        :height "50px"
+                        :anchor "top right")
+    (volume-widget))
+
+(defwindow clock
+  :monitor 0
+  :geometry (geometry :x "-2%"
+                       :y "1%"
+                       :width "410px"
+                       :height "100px"
+                       :anchor "top left")
+  :stacking "bg"
+  :windowtype "dock"
+  :wm-ignore true
+  (clock))
+
+(defwindow logout
+   :monitor 0
+   :stacking "fg"
+   :windowtype "normal"
+   :wm-ignore true
+   :geometry (geometry :x "0"
+                       :y "0"
+                       :width "250px"
+                       :height "300px"
+                       :anchor "center")
+   (logout))
+

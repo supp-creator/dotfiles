@@ -1,0 +1,50 @@
+
+strip_trailing_spaces always
+
+copy_on_select yes
+
+url_prefixes http https file ftp gemini git
+
+detect_urls yes 
+
+open_url_with default
+
+window_padding_width 6
+
+window_strategy center
+
+resize_debounce_time 0.1
+
+hide_window_decorations yes 
+
+remember_window_size yes 
+
+enable_audio_bell no
+
+visual_bell_duration 0.1
+
+font_family Fira Code Light 
+
+bold_font Fira Code SemiBold
+
+italic_font Operator Mono Book Italic 
+
+bold_italic_font Operator Mono Medium Italic 
+
+font_size 13.0
+modify_font line_height 115%
+text_composition_strategy legacy
+
+cursor_shape block
+
+shell_integration no-cursor
+
+cursor_blink_interval 0.5
+
+cursor_stop_blinking_after 15.0
+
+
+# BEGIN_KITTY_THEME
+# Tokyo Night Storm
+include current-theme.conf
+# END_KITTY_THEME

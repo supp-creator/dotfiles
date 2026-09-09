@@ -1,5 +1,5 @@
 browser = "firefox"
-terminal = "wezterm"
+terminal = "kitty"
 file_manager = "thunar"
 
 hl.window_rule({
@@ -24,14 +24,14 @@ hl.window_rule({
 hl.window_rule({
     match = { class = terminal },
     center = true,
-    float = true
+    float = false
 })
 
 hl.window_rule({
     match = { class = file_manager },
     center = true,
     float = true,
-    size = {"(monitor_w*0.60)", "(monitor_h*0.45)"}
+    size = {"(monitor_w*0.60)", "(monitor_h*0.60)"}
 })
 
 hl.window_rule({
@@ -43,7 +43,7 @@ hl.window_rule({
 hl.window_rule({
     match = { class = "blueman-manager" },
     float = true,
-    size = {"(monitor_h*0.50)", "(monitor_h*0.60)"}
+    size = {"(monitor_w*0.50)", "(monitor_h*0.60)"}
 })
 
 hl.window_rule({
@@ -52,7 +52,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = "rofi" },
+    match = { class = "fuzzel" },
     animation = "popin"
 })
 
@@ -61,6 +61,13 @@ hl.window_rule({
     animation = "popin"
 })
 
+
+local ewwLayerRule = hl.layer_rule({
+    name = "widget-layer-blur",
+    match = { class = "gtk-layer-shell" },
+    blur = true,
+})
+ewwLayerRule:set_enabled(false)
 
 -- workspace rules --
 

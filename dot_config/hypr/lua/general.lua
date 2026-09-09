@@ -3,7 +3,7 @@ hl.config({
     general = {
         gaps_in = 5,
         gaps_out = 10,
-        border_size = 3,
+        border_size = 0,
         -- gaps_workspace = 0,
         layout = "dwindle", --master/scrolling/dwindle/monocle
         allow_tearing = false,
