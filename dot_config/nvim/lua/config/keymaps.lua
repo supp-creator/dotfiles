@@ -1,2 +1,0 @@
--- General keymaps can be added here
--- LSP keymaps are in lua/lsp/keymaps.lua

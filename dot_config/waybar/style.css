@@ -1,41 +1,31 @@
 * {
-    font-family: "JetBrainsMono Nerd Font";
+    font-family: "JetBrains Mono", "Noto Sans", sans-serif;
     font-size: 14px;
-    min-height: 0;
     font-weight: bold;
+    min-height: 0;
 }
 
+/* ---- palette ---- */
+@define-color bg         #F8F4E9;
+@define-color color2     #6B3E26; /* color2 */
+@define-color color1     #F5871C; /* color1 */
+@define-color amber      #D98E3B; /* battery warning only */
+@define-color crimson    #AB2439; /* battery critical only — the one alert color */
 
-@define-color bg         #FFFFFF;
-@define-color fg         #AB2439;
-@define-color color2     #CC1236;
-@define-color color1     #1C1C1C;
-
-tooltip {
-    background: @bg;
-}
-
-tooltip label {
-    color: @fg;
-    font-family: "JetBrainsMono", monospace;
-    font-size: 13px;
-}
-
-#tray {
-    color: @color2;
-}
-
-
+/* ---- window: this single background is what makes the whole
+   bar read as one pill. every module below stays @bg so there
+   are no visible seams between clusters. ---- */
 window#waybar {
     background: @bg;
+    /* border-radius: 999px; */
 }
 
+/* ---- left cluster: clock + workspaces ---- */
 #clock {
     background: @bg;
     color: @color2;
-    font-weight: 600;
-    padding: 0 14px;
     border-radius: 999px 0 0 999px;
+    padding-left: 14px;
 }
 
 #workspaces {
@@ -46,25 +36,25 @@ window#waybar {
 }
 
 #workspaces button {
+    background: @color2;
     color: @bg;
-    background: @color1;
     padding: 4px 10px;
     margin: 3px 2px;
     border-radius: 999px;
     min-width: 10px;
 }
 
-#workspaces button.active {
-    background: @color2;
+#workspaces button.focused {
+    background: @color1;
     color: @bg;
     font-weight: 600;
     padding: 4px 14px;
+    min-width: 10px;
+    border-radius: 999px;
+    margin: 3px 2px;
 }
 
-#workspaces button:hover {
-    background: alpha(@color1, 0.15);
-}
-
+/* ---- center: mpris ---- */
 #mpris {
     background: @bg;
     color: @color1;
@@ -72,6 +62,9 @@ window#waybar {
     border-radius: 999px;
 }
 
+/* ---- right cluster: pulseaudio / cpu / memory / temperature /
+   network / upower / battery — one shared base, battery included
+   this time so there's no gap at the end of the pill ---- */
 #pulseaudio,
 #cpu,
 #memory,
@@ -80,31 +73,28 @@ window#waybar {
 #upower,
 #battery {
     background: @bg;
-    color: @fg;
     padding: 0 10px;
     border-radius: 0;
-    font-weight: 600;
-    font-size: 14px;
+}
+
+#pulseaudio {
+    border-radius: 999px 0 0 999px;
+    padding-left: 14px;
+    color: @color2;
+}
+
+#cpu, #temperature, #memory, #network {
+    color: @color1;
 }
 
 #upower {
     color: @color1;
 }
 
-#pulseaudio {
-    border-radius: 999px 0 0 999px;
-    padding-left: 14px;
+#battery {
     color: @color1;
-}
-
-#battery{
-    /* border-radius: 0 999px 999px 0; */
-    /* padding-right: 14px; */
-    color: @color1;
-}
-
-#cpu, #temperature, #memory, #network {
-    color: @color1;
+    border-radius: 0 999px 999px 0;
+    padding-right: 14px;
 }
 
 #battery.charging {
@@ -112,10 +102,24 @@ window#waybar {
 }
 
 #battery.warning:not(.charging) {
-    color: #E8A87C;
+    color: @amber;
 }
 
 #battery.critical:not(.charging) {
-    color: #C97064;
+    color: @crimson;
 }
 
+/* ---- tooltip ---- */
+tooltip {
+    background: @bg;
+}
+
+tooltip label {
+    color: @color2;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+}
+
+#tray {
+    color: @color2;
+}
